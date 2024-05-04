@@ -6,6 +6,9 @@ import (
 	"url-shortener/internal/config"
 	"url-shortener/internal/lib/logger/sl"
 	"url-shortener/internal/storage/sqlite"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
 )
 
 const (
@@ -22,6 +25,7 @@ func main() {
 	log := setupLogger(cfg.Env)
 	log.Info("starting url-shortener", slog.String("env", cfg.Env))
 	log.Debug("debag messages are enabled")
+
 	// TODO: init storage: sqlite
 	storage, err := sqlite.New(cfg.StoragePath)
 	if err != nil {
@@ -44,7 +48,12 @@ func main() {
 	// }
 
 	// _ = storage
+
 	// TODO: init router: chi, "chi render"
+	router := chi.NewRouter()
+	// middleware
+	router.Use(middleware.RequestID)
+	router.Use(middleware.Logger)
 
 	// TODO: run server:
 }
