@@ -35,7 +35,7 @@ func main() {
 		log.Error("failed to init storage", sl.Err(err))
 		os.Exit(1)
 	}
-
+	log.Info("the storage has been initialized")
 	// id, err := storage.SaveURL("https://google.com", "google")
 	// if err != nil {
 	// 	log.Error("failed to save url", sl.Err(err))
