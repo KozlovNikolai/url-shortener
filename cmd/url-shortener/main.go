@@ -57,7 +57,7 @@ func main() {
 	// 	os.Exit(1)
 	// }
 
-	_ = storage
+	//_ = storage
 
 	// TODO: init router: chi, "chi render"
 	router := chi.NewRouter()
@@ -88,7 +88,7 @@ func main() {
 		IdleTimeout:  cfg.HTTPServer.IdleTimout,
 	}
 	// TODO: run server:
-	if err := srv.ListenAndServe(); err != nil {
+	if err := srv.ListenAndServeTLS("service.pem", "service.key"); err != nil {
 		log.Error("failed to start server")
 	}
 
