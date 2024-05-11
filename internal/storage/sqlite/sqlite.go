@@ -82,6 +82,20 @@ func (s *Storage) GetURL(alias string) (string, error) {
 	return resURL, nil
 }
 
-func (s *Storage) DeleteURL(alias string) error {
+func (s *Storage) DeleteAlias(alias string) error {
+	const op = "storage.sqLite.DeleteAlias"
+
+	stmt, err := s.db.Prepare("DELETE FROM url WHERE alias = ?")
+	if err != nil {
+		return fmt.Errorf("%s: prepare statment: %w", op, err)
+	}
+
+	_, err = stmt.Exec(alias)
+	if errors.Is(err, sql.ErrNoRows) {
+		return storage.ErrAliasNotFound
+	}
+	if err != nil {
+		return fmt.Errorf("%s: execute statment: %w", op, err)
+	}
 	return nil
 }
