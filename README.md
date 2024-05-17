@@ -48,11 +48,47 @@
 
 Для запуска проекта требуется:
 
-1. Склонировать репозиторий к себе на компьютер:
+1. Установить git и golang:
+```
+sudo apt update
+sudo apt install git
+wget https://go.dev/dl/go1.21.10.linux-amd64.tar.gz
+mkdir go1.21.10
+sudo rm -rf /usr/local/go 
+sudo tar -xvf go1.21.10.linux-amd64.tar.gz -C ~/go1.21.10
+export PATH=$PATH:/usr/local/go/bin
+```
+2. Проверить версию Golang:
+```
+go version
+```
+3. Склонировать репозиторий к себе на компьютер:
 ```
 git clone https://github.com/KozlovNikolai/url-shortener.git
 ```
-2. 
+4. перейти в каталог с проектом:
+```
+cd url-shortener
+```
+5. установить значение переменной окружения:
+```
+export CONFIG_PATH="$HOME/url-shortener/config/local.yaml"
+```
+6. удалить файлы:
+```
+rm go.mod
+rm go.sum
+```
+7. обновить зависимости:
+```
+go mod init url-shortener
+go mod tidy
+```
+8. запустить сервер:
+```
+go run cmd/url-shortener/main.go
+```
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
