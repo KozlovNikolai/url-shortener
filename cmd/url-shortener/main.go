@@ -89,7 +89,8 @@ func main() {
 		IdleTimeout:  cfg.HTTPServer.IdleTimout,
 	}
 	// TODO: run server:
-	if err := srv.ListenAndServeTLS("service.pem", "service.key"); err != nil {
+	//if err := srv.ListenAndServeTLS("service.pem", "service.key"); err != nil {
+	if err := srv.ListenAndServe(); err != nil {
 		log.Error("failed to start server")
 	}
 

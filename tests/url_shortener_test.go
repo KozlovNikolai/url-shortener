@@ -3,6 +3,7 @@ package tests
 import (
 	"net/http"
 	"net/url"
+	"path"
 	"testing"
 
 	"github.com/brianvoe/gofakeit/v6"
@@ -108,15 +109,15 @@ func TestURLShortener_SaveRedirect(t *testing.T) {
 
 			// Remove
 
-			// reqDel := e.DELETE("/"+path.Join("url", alias)).
-			// 	WithBasicAuth("myuser", "mupass").
-			// 	Expect().Status(http.StatusOK).
-			// 	JSON().Object()
+			reqDel := e.DELETE("/"+path.Join("url", alias)).
+				WithBasicAuth("myuser", "mypass").
+				Expect().Status(http.StatusOK).
+				JSON().Object()
 
-			// reqDel.Value("status").String().IsEqual("OK")
+			reqDel.Value("status").String().IsEqual("OK")
 
 			// Redirect again
-			//testRedirectNotFound(t, alias)
+			testRedirectNotFound(t, alias)
 		})
 	}
 }
