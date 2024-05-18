@@ -89,6 +89,9 @@ go mod tidy
 go run cmd/url-shortener/main.go
 ```
 
+Все ссылки указаны из расчета работы из домашней папки пользователя.
+
+Все экспорты переменных окружения работают до перезагрузки. Если требуется экспортировать их на постоянку - надо внести их в конфигурацию: ~/.bashrc  или ~/.zshrc
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,7 +112,7 @@ go run cmd/url-shortener/main.go
 Telegram: @gremiha3\
 e-mail: gremiha3@yandex.ru
 
-Project Link: [https://github.com/KozlovNikolai/manipulator](https://github.com/KozlovNikolai/manipulator)
+Project Link: [https://github.com/KozlovNikolai/url-shortener](https://github.com/KozlovNikolai/url-shortener)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,6 +120,4 @@ Project Link: [https://github.com/KozlovNikolai/manipulator](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[arduino-img]: https://cdn.arduino.cc/header-footer/prod/assets/headerLogo-arduino.svg
-[arduino-link]: https://www.arduino.cc/
 [front-img]: images/url-shortener.png
