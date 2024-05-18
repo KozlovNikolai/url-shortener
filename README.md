@@ -38,6 +38,7 @@
    * <p align="left">написаны тесты: unit-тесты, тесты хэндлеров и функциональные,</p>
    * <p align="left">настроен автоматический деплой через GitHub Actions и др.</p>
 
+![Product diagram][diagram-img]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,3 +122,4 @@ Project Link: [https://github.com/KozlovNikolai/url-shortener](https://github.co
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [front-img]: images/url-shortener.png
+[diagram-img]: images/diagram.png
